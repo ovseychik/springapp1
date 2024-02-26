@@ -11,4 +11,9 @@
           class="kz.learn.springcourse.ClassicalMusic">
     </bean>
 
+    <bean id="musicPlayer"
+          class="kz.learn.springcourse.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
 </beans>
