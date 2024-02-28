@@ -1,7 +1,9 @@
 package kz.learn.springcourse;
 
-public class PopMusic implements Music{
+import org.springframework.stereotype.Component;
 
+@Component
+public class PopMusic implements Music{
     @Override
     public String getSong() {
         return "Take On Me";
