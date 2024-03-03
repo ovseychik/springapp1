@@ -1,9 +1,13 @@
 package kz.learn.springcourse;
 
-public class PopMusic implements Music{
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope("prototype")
+public class PopMusic implements Music {
     @Override
     public String getSong() {
-        return "Take On Me";
+        return "I Want to Break Free";
     }
 }
