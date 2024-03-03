@@ -21,7 +21,7 @@ public class MusicPlayer {
             case CLASSICAL:
                 System.out.println("Playing: " + classicalMusic.getSongs().get((int) (Math.random() * 3)));
                 break;
-            case ROCK:
+            case POP:
                 System.out.println("Playing: " + popMusic.getSongs().get((int) (Math.random() * 3)));
                 break;
         }

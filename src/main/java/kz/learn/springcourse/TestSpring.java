@@ -9,7 +9,7 @@ public class TestSpring {
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
         musicPlayer.playMusic(MusicGenres.CLASSICAL);
-        musicPlayer.playMusic(MusicGenres.ROCK);
+        musicPlayer.playMusic(MusicGenres.POP);
 
         context.close();
     }
