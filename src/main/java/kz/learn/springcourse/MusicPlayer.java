@@ -1,11 +1,8 @@
 package kz.learn.springcourse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
     private String name;
@@ -23,7 +20,6 @@ public class MusicPlayer {
         return volume;
     }
 
-    @Autowired
     public MusicPlayer(@Qualifier("classicalMusic") Music music1, @Qualifier("popMusic") Music music2) {
         this.music1 = music1;
         this.music2 = music2;
