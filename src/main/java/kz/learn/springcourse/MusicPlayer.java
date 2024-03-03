@@ -1,25 +1,30 @@
 package kz.learn.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class MusicPlayer {
-    private Music music1;
-    private Music music2;
+    private ClassicalMusic classicalMusic;
+    private PopMusic popMusic;
+
+    private MusicGenres musicGenres;
 
     @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music music1, @Qualifier("popMusic") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(ClassicalMusic classicalMusic, PopMusic popMusic) {
+        this.classicalMusic = classicalMusic;
+        this.popMusic = popMusic;
     }
 
-    public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " + music2.getSong();
+    public void playMusic(MusicGenres genre) {
+        switch (genre) {
+            case CLASSICAL:
+                System.out.println("Playing: " + classicalMusic.getSongs().get((int) (Math.random() * 3)));
+                break;
+            case ROCK:
+                System.out.println("Playing: " + popMusic.getSongs().get((int) (Math.random() * 3)));
+                break;
+        }
     }
 
 }
